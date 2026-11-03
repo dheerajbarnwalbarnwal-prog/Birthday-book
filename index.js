@@ -1,3 +1,4 @@
+
 const book = document.getElementById("book");
 const pages = document.querySelectorAll(".page");
 
@@ -67,7 +68,8 @@ musicBtn.addEventListener("click", async () => {
             await music.play();
             musicBtn.innerHTML = "♫ Pause music";
         } catch (error) {
-            alert("Please add birthday.mp3 inside assets/music folder.");
+            console.error("Music error:", error);
+            alert("Music play nahi ho raha. Song file ka naam aur path check karo.");
         }
     } else {
         music.pause();
@@ -102,7 +104,8 @@ for (let i = 0; i < 35; i++) {
     sparkle.style.opacity = Math.random() * 0.5 + 0.1;
     sparkle.style.fontSize = Math.random() * 12 + 5 + "px";
     sparkle.style.pointerEvents = "none";
-    sparkle.style.animation = `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
+    sparkle.style.animation =
+        `twinkle ${Math.random() * 3 + 2}s infinite alternate`;
 
     sparkleArea.appendChild(sparkle);
 }

@@ -1,112 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#4b1028" />
-  <title>For Kanak | A Birthday Love Book</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kanak — A Birthday Story</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="index.css">
 </head>
+
 <body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="topbar"><span class="brand">✦ A LITTLE BOOK FOR KANAK ✦</span><button id="musicBtn" class="music-btn" type="button">♫ Play music</button></header>
 
-  <main class="stage">
-    <div class="book" id="book" aria-label="Birthday memory book">
-      <section class="page cover">
-        <div class="cover-frame"></div><p class="eyebrow">A COLLECTION OF LITTLE MOMENTS</p>
-        <div class="cover-flower">✿</div><h1>Happy Birthday,<br><em>Kanak</em></h1>
-        <p class="cover-subtitle">A little book made of memories, smiles &amp; wishes.</p>
-        <div class="cover-bottom"><span>OPEN YOUR LITTLE SURPRISE</span><span>❧</span></div>
-      </section>
+<div class="glow glow-a"></div>
+<div class="glow glow-b"></div>
+<div class="sparkles" id="sparkles"></div>
 
-      <section class="page">
-        <p class="eyebrow">01 · A NOTE FOR YOU</p><h2>Today is all about <em>you.</em></h2>
-        <p class="lead">Some people make ordinary days feel a little brighter. This book is a small way to celebrate the lovely person you are.</p>
-        <div class="quote-card"><span>“</span><p>May your year be full of reasons to smile, dreams that find their way to you, and moments you wish could last a little longer.</p></div>
-        <p class="page-note">Turn the pages slowly. There are memories waiting inside.</p>
-      </section>
+<header class="topbar">
+    <div class="wordmark">✦ A BOOK FOR KANAK</div>
+    <button class="music-control" id="musicBtn">♫ Play music</button>
+</header>
 
-      <section class="page photo-page">
-        <p class="eyebrow">02 · THE MANY MOODS OF KANAK</p><h2>Little moments, <em>big smiles.</em></h2>
-        <div class="photo-grid two"><figure class="polaroid tilt-left"><img src="assets/photos/photo1.jpg" alt="Kanak memory 1"><figcaption>A lovely little moment</figcaption></figure><figure class="polaroid tilt-right"><img src="assets/photos/photo2.jpg" alt="Kanak memory 2"><figcaption>One of your sweet smiles</figcaption></figure></div>
-      </section>
+<main class="book-area">
+<div class="book-shadow"></div>
 
-      <section class="page">
-        <p class="eyebrow">03 · YOUR OWN KIND OF MAGIC</p><h2>Never stop being <em>you.</em></h2>
-        <div class="portrait-wrap"><img src="assets/photos/photo5.jpg" alt="Kanak portrait" class="portrait"></div>
-        <p class="center-copy">Your laughter, your little expressions, and the way you make memories special — those are the things worth celebrating.</p>
-      </section>
+<div class="book" id="book">
 
-      <section class="page photo-page">
-        <p class="eyebrow">04 · OUR LITTLE CORNER</p><h2>Memories made <em>together.</em></h2>
-        <div class="photo-grid two"><figure class="polaroid tilt-right"><img src="assets/photos/photo3.jpg" alt="Together memory 1"><figcaption>A moment to keep</figcaption></figure><figure class="polaroid tilt-left"><img src="assets/photos/photo8.jpg" alt="Together memory 2"><figcaption>Us, being us</figcaption></figure></div>
-      </section>
+<section class="page cover">
+    <div class="cover-border"></div>
+    <div class="cover-top">A KEEPSAKE OF LITTLE MOMENTS</div>
+    <div class="cover-ornament">✧</div>
+    <div class="cover-flower">❀</div>
 
-      <section class="page">
-        <p class="eyebrow">05 · A MEMORY IN MOTION</p><h2>Press play, <em>remember.</em></h2>
-        <div class="video-frame"><video controls playsinline preload="metadata"><source src="assets/videos/memory1.mp4" type="video/mp4">Your browser does not support video.</video></div>
-        <p class="page-note">A tiny clip, a memory to revisit.</p>
-      </section>
+    <h1>Happy Birthday<br><em>To My Special One</em></h1>
 
-      <section class="page photo-page">
-        <p class="eyebrow">06 · THE LITTLE DETAILS</p><h2>Things that make a moment <em>special.</em></h2>
-        <div class="photo-grid two"><figure class="polaroid tilt-left"><img src="assets/photos/photo6.jpg" alt="Special memory"><figcaption>Something to remember</figcaption></figure><figure class="polaroid tilt-right"><img src="assets/photos/photo7.jpg" alt="A sweet memory"><figcaption>A little happiness</figcaption></figure></div>
-      </section>
 
-      <section class="page wishes-page">
-        <p class="eyebrow">07 · BIRTHDAY WISHES</p><h2>For the year <em>ahead.</em></h2>
-        <ul class="wish-list"><li>May your heart always find reasons to feel happy.</li><li>May your efforts turn into beautiful achievements.</li><li>May kind people and good opportunities find you.</li><li>May you always have the courage to chase your dreams.</li><li>And may today bring you the warmest smiles.</li></ul>
-        <div class="tiny-heart">♡</div>
-      </section>
+    <div class="cover-bottom">TURN THE PAGE ✦</div>
+</section>
 
-      <section class="page photo-page">
-        <p class="eyebrow">08 · A SOFT LITTLE MEMORY</p><h2>Saved with a <em>smile.</em></h2>
-        <div class="single-photo"><img src="assets/photos/photo4.jpg" alt="Kanak memory"></div>
-        <p class="center-copy">Some pictures don't need a caption. They just make you smile.</p>
-      </section>
+<section class="page">
+    <div class="page-number">01</div>
+    <p class="eyebrow">A NOTE TO BEGIN</p>
+    <h2>Today, the spotlight<br>is <em>all yours.</em></h2>
 
-      <section class="page">
-        <p class="eyebrow">09 · ANOTHER LITTLE REPLAY</p><h2>One more <em>memory.</em></h2>
-        <div class="video-frame"><video controls playsinline preload="metadata"><source src="assets/videos/memory2.mp4" type="video/mp4">Your browser does not support video.</video></div>
-        <p class="page-note">Keep collecting moments that make you happy.</p>
-      </section>
+    <p class="body-copy">
+        Some days deserve more than a simple wish.
+        Today is one of them. This little book is a
+        collection of moments, smiles and warm wishes
+        made especially to celebrate you.
+    </p>
 
-      <section class="page photo-page">
-        <p class="eyebrow">10 · THE THINGS WE KEEP</p><h2>Little things, <em>lasting memories.</em></h2>
-        <div class="photo-grid two"><figure class="polaroid tilt-right"><img src="assets/photos/photo9.jpg" alt="Memory photo"><figcaption>Forever a favourite</figcaption></figure><figure class="polaroid tilt-left"><img src="assets/photos/photo3.jpg" alt="Together photo"><figcaption>A page worth keeping</figcaption></figure></div>
-      </section>
-
-      <section class="page">
-        <p class="eyebrow">11 · A WISH FOR YOU</p><h2>Keep blooming, <em>Kanak.</em></h2>
-        <div class="flower-art">✿ <span>✧</span> ✿</div>
-        <p class="lead center-copy">I hope life surprises you in the sweetest ways. Keep learning, keep laughing, keep dreaming, and never forget how much good you deserve.</p>
-      </section>
-
-      <section class="page cake-page">
-        <p class="eyebrow">12 · MAKE A WISH</p><h2>Your birthday <em>cake!</em></h2>
-        <div class="cake-scene"><div class="flame" id="flame"></div><div class="candle"></div><div class="cake-top"></div><div class="cake-body"><span>HAPPY BIRTHDAY</span></div><div class="cake-plate"></div></div>
-        <button id="wishBtn" class="gold-btn" type="button">Make a wish ✨</button><p id="wishMessage" class="wish-message">A little wish, just for you.</p>
-      </section>
-
-      <section class="page letter-page">
-        <p class="eyebrow">13 · A LITTLE LETTER</p><h2>Dear <em>Kanak,</em></h2>
-        <div class="letter"><p>Happy Birthday! I hope you know how special this day is and how many beautiful things are waiting for you ahead.</p><p>Thank you for being part of so many memories. I hope this new chapter brings you peace, confidence, laughter and everything your heart has been wishing for.</p><p>Stay happy, stay kind, and keep shining in your own way.</p><p class="signoff">With lots of good wishes,<br><strong>Someone cheering for you ♡</strong></p></div>
-      </section>
-
-      <section class="page final-page">
-        <div class="final-star">✦</div><p class="eyebrow">14 · UNTIL THE NEXT MEMORY</p><h2>Happy Birthday<br><em>once again, Kanak.</em></h2>
-        <p class="lead">May this be the beginning of a year you will look back on with a grateful heart.</p>
-        <div class="final-ornament">❧ ♡ ❧</div><p class="cover-bottom">THE END OF THIS BOOK · NOT THE END OF THE MEMORIES</p>
-      </section>
+    <div class="ornate-quote">
+        <span>“</span>
+        <p>May life keep surprising you with beautiful reasons to smile.</p>
+        <small>WITH LOVE & GOOD WISHES</small>
     </div>
-  </main>
 
-  <nav class="controls" aria-label="Book navigation"><button id="prevBtn" type="button" aria-label="Previous page">← <span>Back</span></button><span id="pageCount">Cover · 1 / 15</span><button id="nextBtn" type="button"><span>Next</span> →</button></nav>
-  <p class="hint">Use the buttons or your keyboard arrow keys to turn pages.</p>
-  <script src="script.js"></script>
+    <div class="bottom-flourish">❧</div>
+</section>
+
+<section class="page photo-page">
+    <div class="page-number">02</div>
+    <p class="eyebrow">THE GIRL OF THE DAY</p>
+    <h2>Simply <em>Kanak.</em></h2>
+
+    <div class="hero-photo framed">
+<img src="assets/Photos/photos/photo1.jpg" alt="Kanak"></div>
+
+    <p class="caption">A lovely face, a lovely memory.</p>
+    <div class="bottom-flourish">✧</div>
+</section>
+
+<section class="page photo-page">
+    <div class="page-number">03</div>
+    <p class="eyebrow">LITTLE MOMENTS</p>
+    <h2>Snapshots of <em>happiness.</em></h2>
+
+    <div class="photo-pair">
+        <figure class="polaroid tilt-left">
+            <img src="assets/Photos/photos/photo2.jpg" alt="Memory">
+            <figcaption>A moment to keep</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-right">
+            <img src="assets/Photos/photos/photo3.jpg" alt="Memory">
+            <figcaption>One for the album</figcaption>
+        </figure>
+    </div>
+    <div class="bottom-flourish">❧</div>
+</section>
+
+<section class="page">
+    <div class="page-number">04</div>
+    <p class="eyebrow">A LITTLE APPRECIATION</p>
+    <h2>Never lose your<br><em>sparkle.</em></h2>
+
+    <div class="side-by-side">
+        <div class="small-portrait">
+            <img src="assets/Photos/photos/photo4.jpg" alt="Kanak memory">
+        </div>
+
+        <p class="body-copy">
+            Keep being curious. Keep laughing loudly.
+            Keep finding magic in ordinary days.
+            The world is better with people who bring
+            their own light into it.
+        </p>
+    </div>
+
+    <div class="gold-line"></div>
+    <p class="small-italic">Here's to everything that makes you, you.</p>
+</section>
+
+<section class="page">
+    <div class="page-number">05</div>
+    <p class="eyebrow">A MEMORY IN MOTION</p>
+    <h2>Press play,<br><em>relive the moment.</em></h2>
+
+    <div class="video-card">
+        <video controls playsinline preload="metadata">
+            <source src="assets/Photos/photos/memory1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <p class="caption">Some memories are sweeter in motion.</p>
+</section>
+
+<section class="page photo-page">
+    <div class="page-number">06</div>
+    <p class="eyebrow">A FEW MORE FAVOURITES</p>
+    <h2>Little things,<br><em>lasting feelings.</em></h2>
+
+    <div class="hero-photo framed shorter">
+        <img src="assets/Photos/photos/photo5.jpg" alt="Favourite photo">
+    </div>
+
+    <p class="caption">A frame full of good energy.</p>
+</section>
+
+<section class="page">
+    <div class="page-number">07</div>
+    <p class="eyebrow">WISHES FOR YOUR YEAR</p>
+    <h2>May this chapter<br><em>be beautiful.</em></h2>
+
+    <ul class="wish-list">
+        <li>More laughter than worries.</li>
+        <li>More adventures than excuses.</li>
+        <li>Dreams that turn into plans.</li>
+        <li>People who celebrate your wins.</li>
+        <li>Peace in your heart and joy in your days.</li>
+    </ul>
+</section>
+
+<section class="page photo-page">
+    <div class="page-number">08</div>
+    <p class="eyebrow">THE PHOTO ALBUM</p>
+    <h2>Another page<br>to <em>remember.</em></h2>
+
+    <div class="photo-pair">
+        <figure class="polaroid tilt-right">
+            <img src="assets/Photos/photos/photo6.jpg" alt="Memory">
+            <figcaption>Sweet little detail</figcaption>
+        </figure>
+
+        <figure class="polaroid tilt-left">
+            <img src="assets/Photos/photos/photo7.jpg" alt="Memory">
+            <figcaption>Saved with a smile</figcaption>
+        </figure>
+    </div>
+</section>
+
+<section class="page">
+    <div class="page-number">09</div>
+    <p class="eyebrow">ONE MORE REPLAY</p>
+    <h2>A moving<br><em>memory.</em></h2>
+
+    <div class="video-card">
+        <video controls playsinline preload="metadata">
+            <source src="assets/Photos/photos/memory2.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <p class="caption">Press play and enjoy this little throwback.</p>
+</section>
+
+<section class="page photo-page">
+    <div class="page-number">10</div>
+    <p class="eyebrow">A LITTLE COLLAGE</p>
+    <h2>Moments worth<br><em>keeping close.</em></h2>
+
+    <div class="hero-photo framed shorter">
+        <img src="assets/Photos/photos/photo8.jpg" alt="Memory">
+    </div>
+
+    <p class="caption">May there be many more memories like this.</p>
+</section>
+
+<section class="page">
+    <div class="page-number">11</div>
+    <p class="eyebrow">A WISH FROM THE HEART</p>
+    <h2>Keep growing.<br><em>Keep glowing.</em></h2>
+
+    <div class="wish-seal">✿</div>
+
+    <p class="body-copy center">
+        I hope you always find the courage to follow
+        your dreams, the patience to enjoy the journey,
+        and the confidence to know that you deserve
+        good things.
+    </p>
+
+    <p class="small-italic center">Your next chapter is waiting to bloom.</p>
+</section>
+
+<section class="page cake-page">
+    <div class="page-number">12</div>
+    <p class="eyebrow">THE BIRTHDAY MOMENT</p>
+    <h2>Make a <em>wish.</em></h2>
+
+    <p class="caption">A little cake, just for you.</p>
+
+    <div class="cake-scene">
+        <div class="flame" id="flame"></div>
+        <div class="wick"></div>
+        <div class="candle"></div>
+        <div class="icing"></div>
+        <div class="cake"><span>HAPPY BIRTHDAY</span></div>
+        <div class="plate"></div>
+    </div>
+
+    <button class="gold-button" id="wishBtn">
+        Blow out the candle ✨
+    </button>
+
+    <p class="wish-message" id="wishMessage">
+        Close your eyes and make a wish.
+    </p>
+</section>
+
+<section class="page letter-page">
+    <div class="page-number">13</div>
+    <p class="eyebrow">A LITTLE LETTER</p>
+    <h2>Dear <em>Kanak,</em></h2>
+
+    <div class="letter-paper">
+        <p>Happy Birthday! I hope today reminds you how many lovely things life has waiting for you.</p>
+
+        <p>May the coming year bring you new experiences, kind people, little surprises and countless reasons to feel proud of yourself.</p>
+
+        <p>Thank you for being part of these memories. I hope this small book brings a smile to your face whenever you turn its pages.</p>
+
+        <p class="signature">
+            With lots of good wishes,<br>
+            <strong>Someone cheering for you ♡</strong>
+        </p>
+    </div>
+</section>
+
+<section class="page photo-page">
+    <div class="page-number">14</div>
+    <p class="eyebrow">ONE LAST MEMORY</p>
+    <h2>Keep this one<br><em>close.</em></h2>
+
+    <div class="hero-photo framed">
+        <img src="assets/Photos/photos/photo9.jpg" alt="Final memory">
+    </div>
+
+    <p class="caption">A final snapshot for this little book.</p>
+</section>
+
+<section class="page final-page">
+    <div class="final-star">✦</div>
+    <p class="eyebrow">THE LAST PAGE, FOR NOW</p>
+
+    <h2>Happy Birthday,<br><em>Kanak Jii.</em></h2>
+
+    <p class="final-copy">
+       Thanku So much for being a part of my life and making it so special. I hope this little book brings a smile to your face and reminds you of all the wonderful memories we've shared. Here's to many more adventures, laughter, and cherished moments together. Wishing you a year filled with love, happiness, and all the things that make your heart sing.
+    </p>
+
+    <div class="final-ornament">❧ ♡ ❧</div>
+    <p class="cover-bottom">MADE OF MEMORIES · SEALED WITH GOOD WISHES</p>
+</section>
+
+</div>
+</main>
+
+<nav class="navigation">
+    <button id="prevBtn" disabled>← Previous</button>
+
+    <div class="page-status">
+        <span id="pageCount">COVER · 1 / 15</span>
+        <div class="progress">
+            <i id="progressBar"></i>
+        </div>
+    </div>
+
+    <button id="nextBtn">Next page →</button>
+</nav>
+
+<p class="hint">Use the arrows or keyboard keys to turn the pages</p>
+
+<audio id="bgMusic" src="assets/Photos/photos/song.mp4" loop></audio>
+
+<script src="index.js"></script>
 </body>
 </html>

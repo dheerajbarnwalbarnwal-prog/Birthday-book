@@ -1,0 +1,710 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --wine: #260b18;
+    --wine-light: #48152c;
+    --gold: #d7b477;
+    --rose: #b97983;
+    --paper: #f8efe4;
+    --ink: #492b35;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background:
+        radial-gradient(ellipse at 50% 40%, #592039 0%, #260b18 55%, #120610 100%);
+    color: var(--paper);
+    font-family: "DM Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.glow {
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .22;
+    pointer-events: none;
+}
+
+.glow-a {
+    background: #d58b91;
+    top: 10%;
+    left: -150px;
+}
+
+.glow-b {
+    background: #bd8a43;
+    bottom: 0;
+    right: -150px;
+}
+
+.topbar {
+    width: min(1100px, 92%);
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+}
+
+.wordmark {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.music-control {
+    border: 1px solid #b98b61;
+    background: #ffffff0b;
+    color: var(--gold);
+    border-radius: 30px;
+    padding: 10px 18px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.book-area {
+    width: 100%;
+    min-height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2200px;
+    padding: 25px 15px;
+    position: relative;
+}
+
+.book {
+    width: 430px;
+    height: 570px;
+    position: relative;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 30px 35px #0009);
+}
+
+.book-shadow {
+    position: absolute;
+    width: 480px;
+    height: 35px;
+    bottom: 20px;
+    border-radius: 50%;
+    background: #0008;
+    filter: blur(20px);
+}
+
+.page {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, #e4d4c3 0%, #fff8ed 7%, #f8efe4 100%);
+    color: var(--ink);
+    padding: 48px 42px;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 1s cubic-bezier(.2,.7,.1,1);
+    overflow: hidden;
+    border-radius: 3px 12px 12px 3px;
+    box-shadow: inset 8px 0 12px #6e493022, inset -2px 0 5px #6e493022;
+}
+
+.page::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #8c66501b);
+    pointer-events: none;
+}
+
+.page.flipped {
+    transform: rotateY(-180deg);
+}
+
+.cover,
+.final-page {
+    background:
+        radial-gradient(circle at center, #64283d, #310d20 75%);
+    color: var(--gold);
+    border: 2px solid #a77b4c;
+    outline: 1px solid #d5b77c;
+    outline-offset: -10px;
+    text-align: center;
+    padding: 65px 35px;
+}
+
+.cover-border {
+    position: absolute;
+    inset: 22px;
+    border: 1px solid #c6a36c88;
+    pointer-events: none;
+}
+
+.cover-top {
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 15px;
+}
+
+.cover-ornament {
+    font-size: 48px;
+    margin-top: 65px;
+    color: #f1d49b;
+}
+
+.cover-flower {
+    font-size: 30px;
+    margin-top: 15px;
+}
+
+.cover h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 52px;
+    line-height: .98;
+    margin-top: 22px;
+    font-weight: 500;
+}
+
+.cover h1 em,
+.page h2 em {
+    color: #b77965;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+}
+
+.cover h1 em {
+    color: #e7c38b;
+    font-size: 72px;
+}
+
+.cover-sub {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    line-height: 1.5;
+    margin-top: 25px;
+    color: #e5c9ad;
+}
+
+.cover-bottom {
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    width: 100%;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.page-number {
+    position: absolute;
+    top: 25px;
+    right: 32px;
+    font-family: "Cormorant Garamond", serif;
+    color: #b78a70;
+    font-size: 15px;
+}
+
+.eyebrow {
+    color: #a47b64;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.page h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    line-height: 1.02;
+    font-weight: 500;
+    color: #492b35;
+    margin-bottom: 25px;
+}
+
+.body-copy {
+    color: #765a59;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    line-height: 1.55;
+}
+
+.ornate-quote {
+    margin-top: 35px;
+    padding: 20px;
+    border-top: 1px solid #c5a17b;
+    border-bottom: 1px solid #c5a17b;
+    text-align: center;
+}
+
+.ornate-quote span {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    color: #b77b70;
+    line-height: .7;
+}
+
+.ornate-quote p {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #75504f;
+}
+
+.ornate-quote small {
+    display: block;
+    margin-top: 15px;
+    color: #a17c65;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.bottom-flourish {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #b98b68;
+    font-size: 25px;
+}
+
+.hero-photo {
+    width: 100%;
+    height: 310px;
+    overflow: hidden;
+}
+
+.hero-photo img,
+.polaroid img,
+.small-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.framed {
+    padding: 8px;
+    background: white;
+    box-shadow: 0 8px 25px #4b253022;
+    border: 1px solid #c7a477;
+}
+
+.shorter {
+    height: 270px;
+}
+
+.caption {
+    text-align: center;
+    color: #98756b;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.photo-pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    margin-top: 38px;
+}
+
+.polaroid {
+    width: 48%;
+    padding: 8px 8px 28px;
+    background: #fffdf7;
+    box-shadow: 0 8px 18px #51352b25;
+}
+
+.polaroid img {
+    height: 205px;
+}
+
+.polaroid figcaption {
+    text-align: center;
+    color: #785a53;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+.tilt-left {
+    transform: rotate(-5deg);
+}
+
+.tilt-right {
+    transform: rotate(5deg);
+}
+
+.side-by-side {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.small-portrait {
+    width: 48%;
+    height: 250px;
+    flex-shrink: 0;
+    padding: 6px;
+    background: white;
+}
+
+.side-by-side .body-copy {
+    font-size: 17px;
+}
+
+.gold-line {
+    width: 70px;
+    height: 1px;
+    background: #b58b63;
+    margin: 25px auto;
+}
+
+.small-italic {
+    color: #a07868;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+}
+
+.video-card {
+    width: 100%;
+    height: 270px;
+    padding: 7px;
+    background: white;
+    border: 1px solid #c7a477;
+    box-shadow: 0 8px 25px #4b253022;
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #1a0b12;
+}
+
+.wish-list {
+    list-style: none;
+    margin-top: 35px;
+}
+
+.wish-list li {
+    padding: 13px 8px;
+    border-bottom: 1px solid #d8c5b4;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    color: #765653;
+}
+
+.wish-list li::before {
+    content: "✧";
+    color: #b98b68;
+    margin-right: 12px;
+}
+
+.wish-seal {
+    width: 90px;
+    height: 90px;
+    border: 1px solid #bd9571;
+    border-radius: 50%;
+    margin: 30px auto;
+    display: grid;
+    place-items: center;
+    font-size: 45px;
+    color: #b77b70;
+}
+
+.center {
+    text-align: center;
+}
+
+.cake-page {
+    text-align: center;
+}
+
+.cake-scene {
+    height: 230px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.cake {
+    position: absolute;
+    width: 190px;
+    height: 85px;
+    background: linear-gradient(90deg, #8f3e50, #c47780, #8f3e50);
+    bottom: 42px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 8px 8px 15px 15px;
+    box-shadow: inset 0 -12px #64273b;
+}
+
+.cake span {
+    position: absolute;
+    top: 35px;
+    width: 100%;
+    text-align: center;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #f8dcae;
+}
+
+.icing {
+    position: absolute;
+    width: 200px;
+    height: 20px;
+    background: #f4d9c7;
+    border-radius: 50%;
+    bottom: 115px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.plate {
+    position: absolute;
+    width: 245px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(#f9e8d0, #b98e69);
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.candle {
+    position: absolute;
+    width: 13px;
+    height: 58px;
+    background: repeating-linear-gradient(45deg, #fff1dc 0 6px, #bb7480 6px 11px);
+    bottom: 132px;
+    left: calc(50% - 6px);
+    z-index: 3;
+}
+
+.wick {
+    position: absolute;
+    width: 2px;
+    height: 9px;
+    background: #51312c;
+    bottom: 188px;
+    left: 50%;
+    z-index: 4;
+}
+
+.flame {
+    position: absolute;
+    width: 18px;
+    height: 27px;
+    background: radial-gradient(ellipse at 50% 75%, #fff5b0, #ffae36 55%, #e65a25);
+    border-radius: 50% 50% 45% 45%;
+    bottom: 195px;
+    left: calc(50% - 9px);
+    z-index: 5;
+    animation: flicker .7s infinite alternate;
+    box-shadow: 0 0 25px #ffb84c;
+}
+
+.flame.off {
+    display: none;
+}
+
+@keyframes flicker {
+    from { transform: rotate(-5deg) scale(.9); }
+    to { transform: rotate(5deg) scale(1.1); }
+}
+
+.gold-button {
+    background: linear-gradient(120deg, #b88753, #f0d39b);
+    color: #351321;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.wish-message {
+    margin-top: 15px;
+    font-family: "Cormorant Garamond", serif;
+    color: #9d7666;
+    font-style: italic;
+}
+
+.letter-paper {
+    background: #fffaf0;
+    padding: 25px 20px;
+    border: 1px solid #d9c2a4;
+    box-shadow: 0 8px 20px #4b25301a;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    line-height: 1.45;
+    color: #73534d;
+}
+
+.letter-paper p {
+    margin-bottom: 15px;
+}
+
+.signature {
+    font-style: italic;
+    padding-top: 12px;
+    border-top: 1px solid #dbc8b1;
+}
+
+.final-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-star {
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+.final-page h2 {
+    color: #f5dfb9;
+    font-size: 48px;
+}
+
+.final-page h2 em {
+    color: #e2b98d;
+    font-size: 65px;
+}
+
+.final-copy {
+    font-family: "Cormorant Garamond", serif;
+    color: #e4c9b2;
+    font-size: 20px;
+    line-height: 1.5;
+    margin-top: 15px;
+}
+
+.final-ornament {
+    font-size: 28px;
+    margin-top: 40px;
+    color: #d4ad7b;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 15px;
+    z-index: 5;
+}
+
+.navigation button {
+    background: transparent;
+    border: 1px solid #a57b59;
+    color: #e3c394;
+    border-radius: 25px;
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+.navigation button:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+}
+
+.page-status {
+    width: 145px;
+    text-align: center;
+    color: #d6b88c;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.progress {
+    height: 3px;
+    background: #ffffff25;
+    margin-top: 9px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress i {
+    display: block;
+    width: 6.66%;
+    height: 100%;
+    background: #d9b57e;
+    transition: width .4s;
+}
+
+.hint {
+    font-size: 10px;
+    color: #b9978e;
+    padding-bottom: 20px;
+}
+
+@media(max-width:600px) {
+    .topbar {
+        padding: 18px 0;
+    }
+
+    .wordmark {
+        font-size: 9px;
+    }
+
+    .book-area {
+        min-height: 570px;
+        padding: 15px 10px;
+    }
+
+    .book {
+        width: min(88vw, 390px);
+        height: min(125vw, 530px);
+    }
+
+    .page {
+        padding: 42px 28px;
+    }
+
+    .page h2 {
+        font-size: 32px;
+    }
+
+    .cover h1 {
+        font-size: 43px;
+    }
+
+    .cover h1 em {
+        font-size: 60px;
+    }
+
+    .hero-photo {
+        height: 270px;
+    }
+
+    .polaroid img {
+        height: 160px;
+    }
+
+    .navigation {
+        gap: 12px;
+    }
+
+    .navigation button {
+        padding: 9px 12px;
+        font-size: 11px;
+    }
+}
